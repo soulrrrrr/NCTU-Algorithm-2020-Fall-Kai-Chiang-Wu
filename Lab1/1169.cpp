@@ -10,6 +10,15 @@ using namespace std;
 #define FOR(i, a, b) for (ll i = (a); i < (b); i++)
 #define REF(i, a, b) for (ll i = (a); i >= (b); i--)
 
+/****************************************************************
+ * 把第二列沒有出現過的數字放進map
+ * 再看第一列，有出現在map的就紀錄，沒有的就放進vector
+ * 把vector sort
+ * 先輸出紀錄次數的vector再輸出紀錄沒有的vector
+ * key:greedy
+ * time:O(nlogn)
+****************************************************************/
+
 int main() {
     int ncases;
     cin >> ncases;

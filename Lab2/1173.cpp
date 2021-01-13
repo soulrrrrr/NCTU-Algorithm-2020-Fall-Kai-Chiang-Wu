@@ -12,6 +12,13 @@ int n, k;
 vector<vector<int>> v;
 vector<vector<int>> ans;
 
+/****************************************************************
+ * 先按距離sort
+ * 再把前k個點用x,y順序sort
+ * key:brute force
+ * time:O(nlogn)
+****************************************************************/
+
 bool cmp(vector<int> const &v1, vector<int> const &v2) {
     return (v1[2] < v2[2] /*|| ((v1[2] == v2[2]) && (v1[0] > v2[0])) || ((v1[2] == v2[2]) && (v1[0] == v2[0]) && (v1[1] >= v2[1]))*/);
 }

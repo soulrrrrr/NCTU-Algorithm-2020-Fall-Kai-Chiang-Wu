@@ -18,7 +18,8 @@ using namespace std;
  * 一種是出現最多次的數字的其中一次算在出現幾種數字，取min
  * 另一種是出現最多次的數字不在出現幾種數字裡，取min
  * 兩者取max
- * key: naive solution
+ * key: brute force key
+ * time:O(BlogB)
 ****************************************************************/
 
 void solve() {

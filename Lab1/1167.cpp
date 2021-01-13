@@ -10,6 +10,13 @@ using namespace std;
 #define FOR(i, a, b) for (ll i = (a); i < (b); i++)
 #define REF(i, a, b) for (ll i = (a); i >= (b); i--)
 
+/****************************************************************
+ * 把每一列的第一個數字取出來
+ * 找到第一個數字小於等於該數字的那列，線性搜索到值
+ * key:brute force
+ * time:O(m+n)
+****************************************************************/
+
 int main() {
     int m, n, k;
     cin >> m >> n >> k;
@@ -27,13 +34,15 @@ int main() {
         int target;
         cin >> target;
         int i = 0, j = 0;
-        if (target < v[i][j] || target > v[m-1][n-1]) {
+        if (target < v[i][j] || target > v[m - 1][n - 1]) {
             cout << -1 << endl;
             continue;
         } else {
             while (i != m) {
-                if (target >= v[i][j]) i++;
-                else break;
+                if (target >= v[i][j])
+                    i++;
+                else
+                    break;
             }
             i--;
             //cout << i << endl;
@@ -45,7 +54,8 @@ int main() {
                 j++;
             }
         }
-        if (j == n) cout << -1 << endl;
+        if (j == n)
+            cout << -1 << endl;
     }
     return 0;
 }

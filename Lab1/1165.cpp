@@ -11,8 +11,8 @@ using namespace std;
 /****************************************************************
  * 在讀入資料時找到pivot記錄下來
  * pivot左和右都是sorted array,可以用binary search找題目要找的數字
- * 
  * key: binary search
+ * time: O(mlogm)
 ****************************************************************/
 
 int pivot;
