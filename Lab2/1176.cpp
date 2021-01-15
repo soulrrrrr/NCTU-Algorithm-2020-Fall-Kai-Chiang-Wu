@@ -1,14 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#pragma GCC optimize("O2")
+#pragma GCC optimize("O2", "O3", "Ofast", "unroll-loops")
 
 #define fs first
 #define sc second
 #define pb push_back
 #define ll long long
+#define int ll
 #define FOR(i, a, b) for (ll i = (a); i < (b); i++)
 #define REF(i, a, b) for (ll i = (a); i >= (b); i--)
+#define pii pair<int, int>
+
+/****************************************************************
+ * 開bool陣列紀錄各行/列/方格的數字有沒有被選過
+ * eg.row[3][5] = 1 表示第4列已經有5了
+ * key:backtracking
+ * time: 4,024ms
+****************************************************************/
 
 int k = 0, n = 0, p;
 int sudoku[25][25];
@@ -70,23 +79,23 @@ bool solve(int i, int j) {
             update(i, j, num, true);
             if (solve(i, j + 1))
                 return true;
-            sudoku[i][j] = 0;
-            update(i, j, num, false);
+            sudoku[i][j] = 0;         // 退回時要改回0
+            update(i, j, num, false); // 退回時要改回沒有用過該數字
         }
     }
     return false;
 }
 
 signed main() {
-    std::cin.sync_with_stdio(0);
-    std::cin.tie(0);
+    cin.sync_with_stdio(0);
+    cin.tie(0);
     int temp;
     while (cin >> temp) {
         inpu.pb(temp);
     }
     k = 0;
     n = sqrt(inpu.size());
-    p = sqrt(n);
+    p = sqrt(n); // 數獨的邊長
     //cout << p << endl;
     //cout << n << endl;
     FOR(i, 0, n) {

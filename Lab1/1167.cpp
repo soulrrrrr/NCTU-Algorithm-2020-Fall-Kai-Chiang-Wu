@@ -1,14 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#pragma GCC optimize("O2")
+#pragma GCC optimize("O2", "O3", "Ofast", "unroll-loops")
 
 #define fs first
-#define second sc
+#define sc second
 #define pb push_back
 #define ll long long
+#define int ll
 #define FOR(i, a, b) for (ll i = (a); i < (b); i++)
 #define REF(i, a, b) for (ll i = (a); i >= (b); i--)
+#define pii pair<int, int>
 
 /****************************************************************
  * 把每一列的第一個數字取出來

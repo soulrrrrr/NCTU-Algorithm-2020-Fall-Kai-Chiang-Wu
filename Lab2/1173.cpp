@@ -1,13 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#pragma GCC optimize("O2")
+#pragma GCC optimize("O2", "O3", "Ofast", "unroll-loops")
 
+#define fs first
+#define sc second
 #define pb push_back
 #define ll long long
+#define int ll
 #define FOR(i, a, b) for (ll i = (a); i < (b); i++)
 #define REF(i, a, b) for (ll i = (a); i >= (b); i--)
-#define int ll
+#define pii pair<int, int>
+
 int n, k;
 vector<vector<int>> v;
 vector<vector<int>> ans;
