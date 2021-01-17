@@ -1,17 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#pragma GCC optimize("O3")
-#pragma GCC optimize("unroll-loops")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
+#pragma GCC optimize("O2", "O3", "Ofast", "unroll-loops")
 
-#define pb push_back
-#define ll long long
-#define pii pair<int, int>
 #define fs first
 #define sc second
+#define pb push_back
+#define ll long long
+#define int ll
 #define FOR(i, a, b) for (ll i = (a); i < (b); i++)
 #define REF(i, a, b) for (ll i = (a); i >= (b); i--)
+#define pii pair<int, int>
+
+/****************************************************************
+ * v[i] 紀錄i可以走到的牌的號碼
+ * 從起點bfs，有遇到0就輸出possible的那串並return
+ * 跑完都沒有就輸出impossible的那串
+ * key:bfs
+ * time: 8ms
+****************************************************************/
 
 int m, n, start_i;
 int temp;

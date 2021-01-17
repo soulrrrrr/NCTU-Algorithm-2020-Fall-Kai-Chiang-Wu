@@ -1,16 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#pragma GCC optimize("O3", "unroll-loops")
+#pragma GCC optimize("O2", "O3", "Ofast", "unroll-loops")
 
 #define fs first
 #define sc second
 #define pb push_back
 #define ll long long
+#define int ll
 #define FOR(i, a, b) for (ll i = (a); i < (b); i++)
 #define REF(i, a, b) for (ll i = (a); i >= (b); i--)
 #define pii pair<int, int>
-#define int ll
+
+/****************************************************************
+ * 由於每個點的入度最多只有1（樹的結構）
+ * 所以可以把點a到點b邊的值紀錄在b點上(a, b為舉例)，源頭值為0
+ * 從源頭dfs找到最大值
+ * key:dfs
+ * time:88ms
+****************************************************************/
 
 struct node {
     int val;
@@ -42,6 +50,7 @@ void solve() {
             v[a].next.pb(i);
         v[i].val = b;
     }
+    v[k].val = 0;
     dfs(k, 0);
     cout << ans << endl;
     return;

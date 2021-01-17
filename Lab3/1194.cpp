@@ -1,15 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#pragma GCC optimize("O3", "unroll-loops")
+#pragma GCC optimize("O2", "O3", "Ofast", "unroll-loops")
 
 #define fs first
 #define sc second
 #define pb push_back
 #define ll long long
+#define int ll
 #define FOR(i, a, b) for (ll i = (a); i < (b); i++)
 #define REF(i, a, b) for (ll i = (a); i >= (b); i--)
 #define pii pair<int, int>
+
+/****************************************************************
+ * 從n點開始dfs, 只要走到無法再走都沒有遇到環就成功，把結果記在pushed
+ * 如果遇到環就拿不到，直接結束dfs
+ * key:dfs
+ * time:8ms
+****************************************************************/
 
 struct node {
     int id;
@@ -21,6 +29,14 @@ bool vis[10001];
 bool pushed[10001];
 bool loop;
 vector<int> ans;
+
+/****************************************************************
+ * 由於每個點的入度最多只有1（樹的結構）
+ * 所以可以把點a到點b邊的值紀錄在b點上(a, b為舉例)，源頭值為0
+ * 從源頭dfs找到最大值
+ * key:dfs
+ * time:44ms
+****************************************************************/
 
 void dfs(int i) {
     vis[i] = true;
