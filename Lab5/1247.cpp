@@ -12,6 +12,14 @@ using namespace std;
 #define REF(i, a, b) for (ll i = (a); i >= (b); i--)
 #define pii pair<int, int>
 
+/****************************************************************
+ * 將streams按照結束時間前到後sort
+ * 如果後一個stream的開始比前一個stream結束時間還晚或一樣
+ * 就表示可以看後一個stream，更新ans跟end值
+ * key:greedy
+ * time:244ms
+****************************************************************/
+
 int cases, n, s, t;
 pii v[100005];
 

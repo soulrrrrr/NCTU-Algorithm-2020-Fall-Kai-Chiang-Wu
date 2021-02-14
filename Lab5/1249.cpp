@@ -12,16 +12,15 @@ using namespace std;
 #define REF(i, a, b) for (ll i = (a); i >= (b); i--)
 #define pii pair<int, int>
 
+/****************************************************************
+ * key:greedy
+****************************************************************/
+
 int cases, n;
 string a, b;
 char A[500005], B[500005], ans[500005];
 
-void init() {
-    ;
-}
-
 void solve() {
-    init();
     cin >> a >> b;
     n = a.size();
     strcpy(A, a.c_str());

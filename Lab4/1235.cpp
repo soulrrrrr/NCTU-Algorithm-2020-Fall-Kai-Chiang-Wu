@@ -13,7 +13,7 @@ using namespace std;
 #define pii pair<int, int>
 
 /****************************************************************
- * 假設出現的最小邊為eg[0], eg[1], ..., eg[m-1]
+ * 假設出現的最小邊為eg[0], eg[1], ..., eg[m-1], 做m次kruskal
  * 當最大邊減最小邊之值比原本大時就更新
  * key:並查集, union find, kruskal
  * time:16ms

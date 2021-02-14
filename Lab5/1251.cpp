@@ -15,8 +15,8 @@ using namespace std;
 int v[7];
 
 signed main() {
-    //cin.tie(0);
-    //cin.sync_with_stdio(0);
+    cin.tie(0);
+    cin.sync_with_stdio(0);
     while (cin >> v[1] >> v[2] >> v[3] >> v[4] >> v[5] >> v[6]) {
         if (v[1] + v[2] + v[3] + v[4] + v[5] + v[6] == 0)
             return 0;
